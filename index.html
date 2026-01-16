@@ -2,228 +2,185 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>ROBEERYXZ</title>
+<title>VINCITY ROLEPLAY</title>
+
 <style>
-* {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+
+body{
+background:linear-gradient(135deg,#0c0c0c,#1a0a1f);
+color:#e0e0e0;
 }
 
-body {
-    background: linear-gradient(135deg, #2c2c2c, #a60000);
-    color: #fff;
+/* POPUP */
+.popup{
+position:fixed;inset:0;
+background:rgba(0,0,0,.9);
+display:flex;align-items:center;justify-content:center;
+z-index:9999;
+}
+.popup-box{
+background:#1a0a1f;
+border:1px solid #9b59b6;
+padding:30px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 0 30px rgba(180,0,255,.6);
+}
+.popup-box img{
+width:120px;height:120px;border-radius:50%;
+margin-bottom:15px;
+box-shadow:0 0 25px rgba(180,0,255,.8);
+}
+.popup-box button{
+margin-top:15px;
+padding:12px 28px;
+border:none;border-radius:30px;
+background:#9b59b6;color:white;font-weight:bold;
 }
 
-/* HEADER LOGO */
-header {
-    text-align:center;
-    padding:20px;
+/* HEADER */
+.logo-box{text-align:center;padding:30px 15px}
+.logo-box img{
+width:130px;height:130px;border-radius:50%;
+margin-bottom:15px;
+box-shadow:0 0 30px rgba(180,0,255,.9);
 }
+.logo-box h1{color:#c77dff;letter-spacing:3px}
+.status{margin-top:10px;color:#00ff99;font-weight:bold}
 
-header img {
-    width:150px;
-    border-radius:20px;
-    margin-bottom:15px;
-    box-shadow:0 0 20px #ff0000;
-}
-
-header h1 {
-    color:#ff4444;
-    letter-spacing:2px;
-    margin-bottom:5px;
-}
-
-header p {
-    font-size:14px;
-    opacity:0.8;
-}
-
-/* VIDEO SECTION */
-.video-container {
-    max-width:800px;
-    margin:20px auto;
-    background:#1a1a1a;
-    border-radius:15px;
-    padding:10px;
-    text-align:center;
-}
-
-video {
-    width:100%;
-    max-height:450px;
-    border-radius:12px;
-    cursor:pointer;
+/* VIDEO */
+.video-box{padding:0 20px 20px}
+.video-box iframe{
+width:100%;height:200px;
+border-radius:16px;
+border:1px solid #9b59b6;
 }
 
 /* BUTTON */
-.btn {
-    display:inline-block;
-    padding:10px 18px;
-    margin-top:10px;
-    background:#ff4444;
-    color:#fff;
-    border:none;
-    border-radius:25px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-    text-decoration:none;
+.btn{
+display:block;
+background:#9b59b6;
+color:white;
+text-align:center;
+padding:12px;
+border-radius:30px;
+margin-top:10px;
+font-weight:bold;
+text-decoration:none;
+cursor:pointer;
 }
+.btn-green{background:#00ff99;color:#000}
+.btn-blue{background:#5865F2}
 
-.btn:hover {
-    background:#ff7777;
-    transform:scale(1.05);
+/* CARD */
+section{padding:20px}
+.card{
+background:#1a0a1f;
+border:1px solid #9b59b6;
+border-radius:14px;
+padding:18px;
+margin-bottom:18px;
+box-shadow:0 0 15px rgba(155,89,182,.25);
 }
-
-/* REKOMENDASI VIDEO */
-.rekomendasi {
-    max-width:800px;
-    margin:30px auto;
-    background:#2c2c2c;
-    border-radius:15px;
-    padding:15px;
-}
-
-.rekomendasi h2 {
-    color:#ff4444;
-    margin-bottom:10px;
-}
-
-.rekomendasi ul {
-    list-style:none;
-}
-
-.rekomendasi ul li {
-    padding:6px 0;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-}
+.card h2{color:#b366ff;margin-bottom:10px}
 
 /* FOOTER */
-footer {
-    text-align:center;
-    padding:15px;
-    font-size:12px;
-    opacity:0.7;
-}
-
-/* POPUP WELCOME */
-#welcomePopup {
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.85);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:999;
-}
-
-#welcomeBox {
-    background:#1a1a1a;
-    border:2px solid #ff4444;
-    border-radius:20px;
-    padding:30px;
-    text-align:center;
-}
-
-#welcomeBox img {
-    width:100px;
-    border-radius:15px;
-    margin-bottom:15px;
-}
-
-#welcomeBox h2 {
-    color:#ff4444;
-    margin-bottom:10px;
-}
-
-#welcomeBox p {
-    font-size:14px;
-    opacity:0.8;
-    margin-bottom:20px;
-}
-
-#welcomeBox .popup-btn {
-    padding:10px 18px;
-    border:none;
-    border-radius:25px;
-    font-weight:bold;
-    margin:5px;
-    cursor:pointer;
-}
-
-#welcomeBox .yes {
-    background:#00ff44;
-    color:#000;
-}
-
-#welcomeBox .no {
-    background:#ff4444;
-    color:#fff;
-}
+footer{text-align:center;padding:15px;font-size:12px;opacity:.6}
 </style>
 </head>
+
 <body>
 
-<!-- WELCOME POPUP -->
-<div id="welcomePopup">
-    <div id="welcomeBox">
-        <img src="1768599882066.jpg" alt="Logo ROBEERYXZ">
-        <h2>WELCOME TO ROBEERYXZ</h2>
-        <p>Selamat datang! Nikmati video terbaik di sini.</p>
-        <button class="popup-btn yes" onclick="closePopup()"> LANJUTKAN</button>
-    </div>
+<audio id="bgMusic" loop>
+<source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+<div class="popup-box">
+<img src="1768587468171.jpg">
+<h2>WELCOME TO VINCITY ROLEPLAY</h2>
+<p>Indonesia Serious Roleplay Server</p>
+<button onclick="closePopup()">ENTER</button>
+</div>
 </div>
 
-<header>
-    <img src="1768599882066.jpg" alt="Logo ROBEERYXZ">
-    <h1>ROBEERYXZ</h1>
-    <p>LIAT VIDEO? DISINI AJA, 100% GRATIS, BISA DOWNLOAD</p>
+<header class="logo-box">
+<img src="1768587468171.jpg">
+<h1>VINCITY ROLEPLAY</h1>
+<p>Indonesia Roleplay Server • SA-MP</p>
+<div class="status" id="player"> ONLINE | 30 / 150 PLAYERS</div>
 </header>
 
-<div class="video-container">
-    <video id="mainVideo" poster="Screenshot_20260117-044328.jpg" controls>
-        <source src="XNXX_one_of_my_wettest_masturbations_super_wet_pussy_360p.mp4" type="video/mp4">
-        Browsermu tidak mendukung video HTML5.
-    </video>
-    <a class="btn" href="XNXX_one_of_my_wettest_masturbations_super_wet_pussy_360p.mp4" download> DOWNLOAD VIDEO</a>
+<!-- VIDEO -->
+<div class="video-box">
+<iframe src="https://www.youtube.com/embed/aXO-YZ9jN8o?autoplay=1&mute=1&loop=1&playlist=aXO-YZ9jN8o&controls=0"
+allow="autoplay"></iframe>
 </div>
 
-<div class="rekomendasi">
-    <h2>REKOMENDASI VIDEO</h2>
-    <ul>
-        <li>Video 1 - Seru & Gratis</li>
-        <li>Video 2 - Update Harian</li>
-        <li>Video 3 - Konten Populer</li>
-    </ul>
+<section>
+
+<div class="card">
+<h2>SERVER IP</h2>
+<p id="ip">178.128.222.239:7777</p>
+<button class="btn btn-green" onclick="copyIP()">SALIN IP</button>
 </div>
 
-<footer>
-<p>© 2026 ROBEERYXZ</p>
-</footer>
+<div class="card">
+<h2>DISCORD</h2>
+<a class="btn btn-blue" href="https://discord.gg/XuaJSh4W9" target="_blank">
+JOIN DISCORD
+</a>
+</div>
+
+<div class="card">
+<h2>ADMIN & STAFF</h2>
+<p>
+Owner : Wisky<br>
+Developer : Samsoll & Asthon<br>
+Admin : Kuro
+</p>
+</div>
+
+<div class="card">
+<h2>MUSIC</h2>
+<button class="btn" onclick="toggleMusic()">PLAY / STOP MUSIC</button>
+</div>
+
+</section>
+
+<footer>© 2026 VINCITY ROLEPLAY</footer>
 
 <script>
-// POPUP
-const popup = document.getElementById("welcomePopup");
+/* POPUP */
 function closePopup(){
-    popup.style.display="none";
+document.getElementById("popup").style.display="none";
 }
 
-// PLAY VIDEO FULLSCREEN ON CLICK
-const video = document.getElementById("mainVideo");
-video.addEventListener('click', function(){
-    if(video.requestFullscreen){
-        video.requestFullscreen();
-    } else if(video.webkitRequestFullscreen){
-        video.webkitRequestFullscreen();
-    } else if(video.msRequestFullscreen){
-        video.msRequestFullscreen();
-    }
-});
+/* MUSIC */
+let on=false;
+const music=document.getElementById("bgMusic");
+function toggleMusic(){
+on?music.pause():music.play();
+on=!on;
+}
+
+/* COPY IP */
+function copyIP(){
+navigator.clipboard.writeText("178.128.222.239:7777");
+alert("IP BERHASIL DISALIN!");
+}
+
+/* FAKE PLAYER */
+let p=30;
+setInterval(()=>{
+p+=Math.floor(Math.random()*5)-2;
+if(p<15)p=15;
+if(p>90)p=90;
+document.getElementById("player").innerText=
+" ONLINE | "+p+" / 150 PLAYERS";
+},4000);
 </script>
 
 </body>
